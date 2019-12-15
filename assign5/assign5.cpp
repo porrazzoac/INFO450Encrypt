@@ -22,7 +22,7 @@ public:
 };
 
 
-class Encrypt : public Crypt
+class Encrypt : public Crypt //encryption algorithm
 {
 private:
 	char hash(char c)
@@ -32,7 +32,7 @@ private:
 	}
 };
 
-class Decrypt : public Crypt
+class Decrypt : public Crypt //decryption algorithm
 {
 private:
 	char hash(char c)
@@ -62,16 +62,16 @@ public:
 
 int main()
 {
-	cout << "please enter action to perfrom\n";
+	cout << "please enter action to perfrom\n";//user selects action to be performed
 	string perform;
 	cin >> perform;
 	string filename;
 	cout << "Please enter path to file\n";
-	getline(cin, filename);
+	getline(cin, filename); //they enter the file path
 	ifstream file(filename, ios::binary);
-	string outfile = "new";
+	string outfile = "new";// the file is recreated in the directory with "new" in front of it
 	outfile.append("filename");
 	ofstream ofile(outfile, ios::binary);
 	Engine e;
-	e.GetHandler(perform)->execute(file, ofile);
+	e.GetHandler(perform)->execute(file, ofile);//Couldn't figure out handler. Had to watch youtube videos, but this was never taught in class.
 }
