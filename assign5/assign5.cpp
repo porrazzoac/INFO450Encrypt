@@ -22,7 +22,7 @@ public:
 };
 
 
-class Encrypt : public Crypt //encryption algorithm
+class Encrypt : public Crypt //encryption class algorithm
 {
 private:
 	char hash(char c)
@@ -32,7 +32,7 @@ private:
 	}
 };
 
-class Decrypt : public Crypt //decryption algorithm
+class Decrypt : public Crypt //decryption class algorithm
 {
 private:
 	char hash(char c)
@@ -43,7 +43,7 @@ private:
 };
 
 
-class Engine {
+class Engine { //engine class algorithm
 public:
 	Crypt * GetHandler(string k)
 	{
